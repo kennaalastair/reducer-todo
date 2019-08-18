@@ -22,6 +22,11 @@ export function reducer(state, action) {
                 ...state,
                 todoArray: [...state.todoArray, newTodo] // state.todoArray.concat(newTodo)
             };
+        case "CLEAR_COMPLETED":
+            return {
+                ...state,
+                todoArray: state.todoArray.filter(todo => !todo.completed)
+            };
         default:
             return state;
     }

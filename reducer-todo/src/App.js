@@ -14,10 +14,14 @@ function App() {
     dispatch({ type: "ADD_TODO", payload: item });
   };
 
+  const clearCompleted = () => {
+    dispatch({ type: "CLEAR_COMPLETED" });
+  };
+
   return (
     <div className="App">
       <TodoList todoArray={state.todoArray} />
-      <TodoForm addTodo={addTodo} />
+      <TodoForm addTodo={addTodo} clearCompleted={clearCompleted} />
     </div>
   );
 }
